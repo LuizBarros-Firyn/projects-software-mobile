@@ -13,11 +13,11 @@ export default function PasswordReset() {
     const [token, setToken] = useState('');
     const [password, setPassword] = useState('');
 
-    async function handlePasswordReset(values){
+    async function handlePasswordReset(){
         const data = {
             email,
             token,
-            new_password: password,
+            password
         };
 
         try {

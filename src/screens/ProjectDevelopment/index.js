@@ -29,14 +29,16 @@ export default function ProjectDevelopment() {
                 setProject(response.data);
             });
     
-            await api.get(`project_messages/${projectId}`, {
-                headers: {
-                        sender_id: userSession.user_is_freelancer ? userSession.user_team_id : userSession.user_id,
-                        authorization: `Bearer ${authorization}`
-                }            
-            }).then(response => {
-                setProjectMessages(response.data);
-            });
+            setInterval(async () => {
+                await api.get(`project_messages/${projectId}`, {
+                    headers: {
+                            sender_id: userSession.user_is_freelancer ? userSession.user_team_id : userSession.user_id,
+                            authorization: `Bearer ${authorization}`
+                    }            
+                }).then(response => {
+                    setProjectMessages(response.data);
+                });
+            }, 5000);
         }
 
         fetchPageData();
