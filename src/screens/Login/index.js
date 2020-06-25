@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, TextInput, Alert, AsyncStorage } from 're
 import { useNavigation } from '@react-navigation/native';
 import api from '../../services/api';
 
+import User from '../../assets/User.svg';
 import styles from './styles';
 
 export default function Login() {
@@ -40,6 +41,8 @@ export default function Login() {
         <View style={styles.container}>
             <Text style={styles.welcomeText}>Seja bem vindo!</Text>
 
+            <View style={styles.userPortrait}><User width={100} height={100}/></View>
+
             <TextInput value={email} onChangeText={e => setEmail(e)} placeholderTextColor={'grey'} style={styles.emailField} placeholder="E-mail" />
             <TextInput value={password} onChangeText={e => setPassword(e)} secureTextEntry={true} placeholderTextColor={'grey'} style={styles.passwordField}  placeholder="Senha" />
 
@@ -47,7 +50,7 @@ export default function Login() {
                 <Text style={{color: '#FFF', fontSize: 18}}>Logar</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.resetPasswordButton} onPress={() => {}}>
+            <TouchableOpacity style={styles.resetPasswordButton} onPress={() => navigation.navigate('PasswordRecovery')}>
                 <Text style={styles.resetPasswordButtonText}>Esqueceu sua senha?</Text>
             </TouchableOpacity>
 

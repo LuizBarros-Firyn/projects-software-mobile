@@ -30,7 +30,6 @@ export default function ClientMain() {
             <View style={styles.options}>
                 <TouchableOpacity onPress={() => navigation.navigate('OngoingProjects', { userSession, authorization })} style={styles.optionsButton}><Text style={styles.optionsButtonText}>Em andamento</Text></TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('NewProject', { userSession, authorization })} style={styles.optionsButton}><Text style={styles.optionsButtonText}>Publicar Projeto</Text></TouchableOpacity>
-                <TouchableOpacity style={styles.optionsButton}><Text style={styles.optionsButtonText}>Perfil</Text></TouchableOpacity>
             </View>
             <Text style={styles.h1}>Projetos</Text>
             <FlatList style={styles.list} data={projects} keyExtractor={project => project._id} renderItem={({ item }) => (

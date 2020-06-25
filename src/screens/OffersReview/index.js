@@ -74,7 +74,6 @@ export default function OffersReview() {
             <View style={styles.options}>
                 <TouchableOpacity style={styles.optionsButton}><Text style={styles.optionsButtonText}>Em andamento</Text></TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('NewProject', { userSession, authorization })} style={styles.optionsButton}><Text style={styles.optionsButtonText}>Publicar Projeto</Text></TouchableOpacity>
-                <TouchableOpacity style={styles.optionsButton}><Text style={styles.optionsButtonText}>Perfil</Text></TouchableOpacity>
             </View>
             <Text style={styles.h1}>Ofertas</Text>
             <FlatList style={styles.list} data={offers} keyExtractor={offer => offer._id} renderItem={({ item }) => (

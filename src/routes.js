@@ -13,6 +13,8 @@ import NewOffer from './screens/NewOffer';
 import OffersReview from './screens/OffersReview';
 import OngoingProjects from './screens/OngoingProjects';
 import ProjectDevelopment from './screens/ProjectDevelopment';
+import PasswordRecovery from './screens/PasswordRecovery';
+import PasswordReset from './screens/PasswordReset';
 
 const AppStack = createStackNavigator();
 
@@ -31,6 +33,8 @@ export default function routes() {
                 <AppStack.Screen name="OffersReview" component={OffersReview} />
                 <AppStack.Screen name="OngoingProjects" component={OngoingProjects} />
                 <AppStack.Screen name="ProjectDevelopment" component={ProjectDevelopment} />
+                <AppStack.Screen name="PasswordRecovery" component={PasswordRecovery} />
+                <AppStack.Screen name="PasswordReset" component={PasswordReset} />
             </AppStack.Navigator>
         </NavigationContainer>
     );
